@@ -1,22 +1,30 @@
-#Exercise 10: Is it even? - 35 Marks
+#Exercise 10
+def check_even_odd(number):
+    """Function to check if a number is even or odd."""
+    #checking if the number is even
+    if number % 2 == 0:
+        #if it is not even, a message shows saying it is odd
+        return f"{number} is an Even Number."
+    else:
+        # If it is not even, a message shows saying it is odd
+        return f"{number} is an Odd Number."
 
-# Define the variable a and assign it to the value 24
-a = 92
-if a % 24 == 0:
-    # If true,a is an even number
-    print(a, "Is an Even Number")
-else:
-    # If false,a is an odd number
-    print(a, "Is an Odd Number")
+def main():
+    #for asking the user to enter a number
+    user_input = input("Please enter a number: ")
     
-# Define the variable b and assign it the value 19
-b = 29
+    try:
+        #turning the input into an integer
+        number = int(user_input)
+        #calling the function to check if the number is even or odd
+        result = check_even_odd(number)
+        #printing for the result
+        print(result)
+    except ValueError:
+        #if the input is not a number,it tells the user it's invalid
+        print("Invalid input! Please enter a valid integer.")
 
-if b % 19 == 0:
-    # If true,b is an even number
-    print(b, "Is an Even Number")
-else:
-    # If false,b is an odd number
-    print(b, "Is an Odd Number")
-
-
+# This runs the main function if the script is executed directly
+if __name__ == "__main__":
+    #starting the program by calling the main function
+    main()
